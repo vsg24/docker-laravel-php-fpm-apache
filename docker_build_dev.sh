@@ -1,0 +1,1 @@
+docker build --build-arg APP_DEBUG=true -t "laravel-php-fpm-apache" .

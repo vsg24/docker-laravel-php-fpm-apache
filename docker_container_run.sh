@@ -1,0 +1,1 @@
+docker run -t -d -p 8090:80 -v $PWD/src:/var/www "laravel-php-fpm-apache"

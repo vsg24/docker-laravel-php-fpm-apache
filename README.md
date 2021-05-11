@@ -3,18 +3,16 @@
 #### ⚠ This project is work in progress! Use with caution!
 
 ### Follow the steps to set up the development environment
-1- Clone or generate a Laravel (or any PHP code) project inside `src`
+1- Clone this project then generate a Laravel (or any PHP code) project inside `src`
 
-2- Run `docker build -t "your_prefered_name" .` to build the image. Name the Docker image accordingly.
+2- Run the build script, `sh docker_build_dev.sh` for development or `sh docker_build_prod.sh` for a production optimized version.
 
-3- Depending on your operating system:
-
-<small>For Windows: `docker run -p 80:80 --name your_prefered_name -v %cd%/src:/var/www/html your_prefered_name`</small>
-
-<small>For Linux: `docker run -p 80:80 --name your_prefered_name -v $PWD/src:/var/www/html your_prefered_name`</small>
+3- Bring up the container using `sh docker_container_run.sh`
 
 
 _Notes:_
 
-In case you need to extract a file from inside an image to the host environment you can do the following:
-`docker run --rm httpd:2.4 cat /et~~~~c/apache2/sites-available/000-default.conf > my-httpd.conf`
+- In case you need to extract a file from inside the image to the host environment you can easily achieve it like the following example:
+
+`docker run --rm laravel-php-fpm-apache cat /etc/apache2/sites-available/000-default.conf > my-httpd.conf`
+- The document root is set to `src/public` so if that folder doesn't exist, Apache won't start, of course you can always change that in `host.conf` file
