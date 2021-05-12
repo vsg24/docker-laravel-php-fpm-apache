@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  php-apache:
+    build:
+      context: '.'
+      dockerfile: Dockerfile
+      args:
+        APP_DEBUG: ${APP_DEBUG}
+    container_name: laravel-app
+    ports:
+      - 8090:80
+    volumes:
+      - ./src:/var/www
+
+  db:
+    image: mariadb:10.6.0-focal
+    container_name: mariadb
+    volumes:
+      - ./run/var:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+      - MYSQL_USER=${MYSQL_USER}
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+    ports: # remove this section if you don't want to expose database to the host system
+    - 3306:3306

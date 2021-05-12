@@ -1,4 +1,5 @@
 src/*
-.idea
+.idea/
+run
 
 !src/.gitkeep
