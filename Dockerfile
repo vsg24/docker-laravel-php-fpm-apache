@@ -27,7 +27,7 @@ RUN mkdir -p /var/run/php
 # copy a customized version of supervisor from host to replace the original one in container
 COPY ./.docker/supervisord.conf /etc/supervisord.conf
 
-COPY ./host.conf /etc/apache2/sites-available/000-default.conf
+COPY ./.docker/host.conf /etc/apache2/sites-available/000-default.conf
 # uncomment if, you need to customize php-fpm config
 #COPY ./php-fpm.conf /etc/php/${PHP_VERSION}/fpm/php-fpm.conf
 

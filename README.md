@@ -1,4 +1,4 @@
-### A Debian based PHP (mod_fpm) + Apache (MPM events) Docker workflow
+### A Debian based PHP (mod_fpm) + Apache (MPM event) Docker workflow
 
 ### Using Dockerfile directly
 1- Clone this project then generate a Laravel (or any PHP code) project inside `src`
